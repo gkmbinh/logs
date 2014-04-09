@@ -13,6 +13,9 @@ class LogsController < ApplicationController
     @log.location =  params[:location] + "|" +  params[:name]
     @log.save
 
+    if params[:delete]
+      Log.delete_all 
+    end 
     render json: @log
 
   end 
