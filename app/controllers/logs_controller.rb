@@ -10,7 +10,7 @@ class LogsController < ApplicationController
   def apicall
 
     @log = Log.new
-    @log.location = params[:location]
+    @log.location =  params[:location] + "|" +  params[:name]
     @log.save
 
     render json: @log
