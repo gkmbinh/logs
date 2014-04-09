@@ -13,10 +13,11 @@
   <tbody>
     <% @logs.each do |log| %>
       <tr>
+        <% lo = log.location.split("|") %>
         <td><%= log.id %></td>
-        <td><%= log.location %></td>
+        <td><%= lo[1] %></td>
         <th>Location</th>
-        <td><a href="https://www.google.com/maps/place//@<%= log.location %>,19z/data=!4m2!3m1!1s0x0:0x0">link></td>
+        <td><a href="https://www.google.com/maps/place//@<%= lo[0] %>,19z/data=!4m2!3m1!1s0x0:0x0">link></td>
 
         <td><%= link_to 'Edit', edit_log_path(log) %></td>
         <td><%= link_to 'Destroy', log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
