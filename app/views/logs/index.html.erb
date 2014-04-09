@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Location</th>
+      <th>Location</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,7 +13,9 @@
     <% @logs.each do |log| %>
       <tr>
         <td><%= log.location %></td>
-        <td><%= link_to 'Show', log %></td>
+        <th>Location</th>
+        <td><a href="https://www.google.com/maps/place//@<%= log.location %>,19z/data=!4m2!3m1!1s0x0:0x0">link></td>
+
         <td><%= link_to 'Edit', edit_log_path(log) %></td>
         <td><%= link_to 'Destroy', log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
